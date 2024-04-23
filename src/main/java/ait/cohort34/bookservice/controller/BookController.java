@@ -7,27 +7,26 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book")
 @RequiredArgsConstructor
 public class BookController {
     final BookService bookService;
 
-    @PostMapping
+    @PostMapping("/book")
     public Boolean createBook(@RequestBody BookDto bookDto) {
         return bookService.addBook(bookDto);
     }
 
-    @GetMapping("/{isbn}")
+    @GetMapping("/book/{isbn}")
     public BookDto findBookByIsbn(@PathVariable Long isbn) {
         return bookService.findBookByIsbn(isbn);
     }
 
-    @DeleteMapping("/{isbn}")
+    @DeleteMapping("/book/{isbn}")
     public BookDto deleteBook(@PathVariable Long isbn) {
         return bookService.removeBook(isbn);
     }
 
-    @PutMapping("/{isbn}/title/{title}")
+    @PutMapping("/book/{isbn}/title/{title}")
     public BookDto updateBookTitle(@PathVariable Long isbn, @PathVariable String title) {
         return bookService.updateBookTitle(isbn, title);
     }
