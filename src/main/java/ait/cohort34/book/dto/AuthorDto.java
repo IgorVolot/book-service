@@ -1,12 +1,12 @@
-package ait.cohort34.bookservice.dto;
+package ait.cohort34.book.dto;
 
-import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Getter
+@EqualsAndHashCode(of = "name")
 public class AuthorDto {
     String name;
     LocalDate birthDate;
