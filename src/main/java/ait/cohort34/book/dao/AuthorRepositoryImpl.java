@@ -28,9 +28,4 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     public void deleteById(String authorName) {
 
     }
-
-    @Override
-    public void delete(Author author) {
-
-    }
 }

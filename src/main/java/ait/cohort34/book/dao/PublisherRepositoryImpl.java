@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Repository
-public class PublisherRepositoryImpl implements PublisherRepository {
+public class PublisherRepositoryImpl implements PublisherRepository{
 
     @PersistenceContext
     EntityManager em;
@@ -17,6 +18,11 @@ public class PublisherRepositoryImpl implements PublisherRepository {
     @Override
     public List<String> findByPublishersAuthor(String authorName) {
         return List.of();
+    }
+
+    @Override
+    public Stream<Publisher> findDistinctByBooksAuthorsName(String authorName) {
+        return Stream.empty();
     }
 
     @Override

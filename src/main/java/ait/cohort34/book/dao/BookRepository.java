@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public interface BookRepository {
+
     Stream<Book> findByAuthorsName(String authorName);
 
     Stream<Book> findByPublisherPublisherName(String name);

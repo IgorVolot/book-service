@@ -55,5 +55,4 @@ public class BookController {
     AuthorDto removeAuthor(@PathVariable String authorName) {
         return bookService.removeAuthor(authorName);
     }
-
 }
