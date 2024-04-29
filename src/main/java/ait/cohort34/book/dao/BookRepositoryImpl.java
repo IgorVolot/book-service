@@ -32,6 +32,9 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void deleteByAuthorsName(String name) {
+//        em.createQuery("delete from Book b where :name member of b.authors")
+//                .setParameter("name", name)
+//                .executeUpdate();
         Query query = em.createQuery(QUERY_DELETE_BY_AUTHOR_NAME);
         query.setParameter("name", name);
         query.executeUpdate();

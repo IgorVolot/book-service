@@ -18,6 +18,7 @@ public class Book {
     String isbn;
     @Column(name = "title")
     String title;
+
     @ManyToMany
     @JoinTable(
             name = "book_authors",
