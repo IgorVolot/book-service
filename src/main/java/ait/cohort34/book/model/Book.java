@@ -25,6 +25,8 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "authors_name")
     )
     Set<Author> authors;
+
     @ManyToOne
+    @JoinColumn(name = "publisher_publisher_name")
     Publisher publisher;
 }
